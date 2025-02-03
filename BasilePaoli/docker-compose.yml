@@ -3,9 +3,9 @@ services:
     build:
       context: .
       dockerfile: n8n/Dockerfile
-    container_name: n8n
+    container_name: n8n-sahiko
     ports:
-      - "5678:5678"
+      - "5677:5677"
     volumes:
       - ./n8n_data:/home/node/.n8n
     env_file:

@@ -1,0 +1,18 @@
+services:
+  n8n:
+    build:
+      context: .
+      dockerfile: n8n/Dockerfile
+    container_name: n8n-jazzou
+    ports:
+      - "5676:5676"
+    volumes:
+      - ./n8n_data:/home/node/.n8n
+    env_file:
+      - .env
+    networks:
+      - n8n_network
+
+networks:
+  n8n_network:
+    driver: bridge
